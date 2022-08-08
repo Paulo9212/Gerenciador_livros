@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Livros</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="dist/css/skins/skin-yellow.min.css">
+
+
+    
+<body class="hold-transition skin-yellow sidebar-mini">
+<div class="wrapper">
+
+  <!-- Main Header -->
+  <header class="main-header">
+
+    <!-- Logo -->
+    <a href="index2.html" class="logo">
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><small> Biblioteca </small></span>
+    </a>
+
+    <!-- Header Navbar -->
+    <nav class="navbar navbar-static-top" role="navigation">
+     
+      <!-- Navbar Right Menu -->
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- User Account Menu -->
+          <li class="dropdown user user-menu">
+            <!-- Menu Toggle Button -->
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <!-- The user image in the navbar-->
+              <img src="dist/img/avatar.png" class="user-image" alt="User Image">
+              <!-- hidden-xs hides the username on small devices so only the image appears. -->
+              <span class="hidden-xs">Administrador</span>
+            </a>
+            
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+          <!-- Sidebar Menu -->
+          <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">MENU</li>
+            <!-- Optionally, you can add icons to the links -->
+            <li class="active"><a href="#"><i class="ionicons ion-ios-bookmarks-outline"></i> <span>Livros</span></a></li>
+          </ul>
+          <!-- /.sidebar-menu -->
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Cadastro de livros <br>
+        <small>Gerenciamento de livros no sistema</small>
+      </h1>
+
+    </section>
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+      <div class="row">
+        <div class="col-md-8">
+
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Lista de Livros cadastrados</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Editora</th>
+                    <th>Categoria</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody id="table-books">
+
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+
+        </div>
+        
+        <div class="col-md-4">
+
+          <div class="row">
+          
+            <!-- ./col -->
+            <div class="col-xs-12">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3 id="number-books">0</h3>
+                  
+                  <p>Livros</p>
+                </div>
+                <div class="icon">
+                    <i class="ionicons ion-ios-bookmarks"></i>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+
+          <div class="box box-warning" id="box-book-create">
+            <div class="box-header with-border">
+              <h3 class="box-title">Novo Livro</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" id="form-book-create">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="exampleInputTitle">Título</label>
+                  <input type="text" required class="form-control" id="exampleInputTitle" placeholder="Digite o título do livro" name="title">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputAuthor">Autor</label>
+                    <input type="text" required class="form-control" id="exampleInputAuthor" placeholder="Digite o nome do autor" name="author">
+                  </div>
+                <div class="form-group">
+                    <label for="exampleInputCompany">Editora</label>
+                    <input type="text" required class="form-control" id="exampleInputCompany" placeholder="Digite o nome da editora" name="company">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputCategory">Categoria</label>
+                  <select class="form-control" id="exampleInputCategory" name="category">
+                    <option value="" selected="selected">Selecione uma categoria</option>
+                    <option value="Ação">Ação</option>
+                    <option value="Aventura">Aventura</option>
+                    <option value="Drama" >Drama</option>
+                    <option value="Infântil">Infântil</option>
+                    <option value="Literatura">Literatura</option>
+                    <option value="Ficção_Científica">Ficção Científica</option>
+                    <option value="Biografia">Biografia</option>
+                    <option value="Românce">Românce</option>
+                    <option value="Internacional">Internacional</option>
+                    <option value="Hobbies_Habilidades">Hobbies e habilidades</option>
+                    <option value="Mistério">Mistério</option>
+                    <option value="Investigação">Investigação</option>
+                    <option value="Policial">Policial</option>
+                    <option value="Terror">Terror</option>
+                    
+                  </select>
+                </div>
+               
+              </div>
+              <!-- /.box-body -->          
+              <div class="box-footer">
+                <button type="submit" class="btn btn-success">Salvar</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="box box-dark" id="box-book-update" style="display:none;">
+            <div class="box-header with-border">
+              <h3 class="box-title">Editar Usuário</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form role="form" id="form-book-update">
+                <div class="box-body">
+                  <div class="form-group">
+                    <label for="exampleInputTitle">Título</label>
+                    <input type="text" required class="form-control" id="exampleInputTitle" placeholder="Digite o título do livro" name="title">
+                  </div>
+                  <div class="form-group">
+                      <label for="exampleInputAuthor">Autor</label>
+                      <input type="text" required class="form-control" id="exampleInputAuthor" placeholder="Digite o nome do autor" name="author">
+                    </div>
+                  <div class="form-group">
+                      <label for="exampleInputCompany">Editora</label>
+                      <input type="text" required class="form-control" id="exampleInputCompany" placeholder="Digite o nome da editora" name="company">
+                  </div>
+  
+                  <div class="form-group">
+                    <label for="exampleInputCategory">Categoria</label>
+                    <select class="form-control" id="exampleInputCategory" name="category">
+                      <option value="" selected="selected">Selecione uma categoria</option>
+                      <option value="Action">Ação</option>
+                      <option value="Adventure">Aventura</option>
+                      <option value="Drama">Drama</option>
+                      <option value="Kids">Infântil</option>
+                      <option value="literature">Literatura</option>
+                      <option value="Fiction">Ficção Científica</option>
+                      <option value="Biografy">Biografia</option>
+                      <option value="Romance">Românce</option>
+                      <option value="International">Internacional</option>
+                      <option value="HH">Hobbies e habilidades</option>
+                      <option value="Mistery">Mistério</option>
+                      <option value="Investigation">Investigação</option>
+                      <option value="Policial">Policial</option>
+                      <option value="Horror">Terror</option>
+                      
+                    </select>
+                  </div>
+                 
+                </div>
+                <!-- /.box-body -->          
+                <div class="box-footer">
+                  <button type="submit" class="btn btn-success">Salvar</button>
+                  <button type="button" class="btn btn-default btn-cancel">Cancelar</button>
+                </div>
+              </form>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <!-- Default to the left -->
+    Projeto desenvolvido por Paulo Roberto.
+  </footer>
+
+</div>
+
+<!-- <script src="classes/utius.js"></script> -->
+<script src="models/books.js"></script>
+<script src= "controlers/bookControlers.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
